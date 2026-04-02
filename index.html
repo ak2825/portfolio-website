@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna Kim — Data Science Portfolio</title>
+  <meta name="description" content="Portfolio of Anna Kim, Biometry & Statistics student at Cornell University." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Anna Kim</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="Anna_Kim_Resume.pdf" target="_blank" class="nav-resume">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">Data Science · Analytics</p>
+      <h1 class="hero-title">Anna Kim</h1>
+      <p class="hero-subtitle">Biometry &amp; Statistics · Cornell '28</p>
+      <p class="hero-bio">
+        I work with messy, real-world data to find patterns that matter.
+        From Spotify charts to satellite imagery — I clean, analyze, and communicate what the data is saying.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Projects</a>
+        <a href="Anna_Kim_Resume.pdf" target="_blank" class="btn btn-secondary">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h3 class="project-card-title">Beats and Beliefs</h3>
+          <p class="project-card-desc">
+            Queried and cleaned Spotify Top 50 chart data, merged with country-level democracy indices,
+            and ran regression analysis to explore whether free speech correlates with explicit music content globally.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">R</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Regression</span>
+            <span class="tag">EDA</span>
+          </div>
+          <a href="project-1.html" class="project-link">Read case study →</a>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-card-title">NBA Player Performance Analytics</h3>
+          <p class="project-card-desc">
+            Built linear and nonlinear regression models to analyze NBA player performance metrics.
+            Applied PCA via SVD to reduce dimensionality and identify primary sources of performance variation.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">PCA</span>
+            <span class="tag">Regression</span>
+            <span class="tag">Data Viz</span>
+          </div>
+          <a href="project-2.html" class="project-link">Read case study →</a>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-card-title">Allington Lab Research</h3>
+          <p class="project-card-desc">
+            Generated labeled training data for a deep learning land-use classification model by annotating
+            satellite imagery of agricultural parcels in Uttarakhand, India using QGIS.
+          </p>
+          <div class="project-tags">
+            <span class="tag">QGIS</span>
+            <span class="tag">Python</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Geospatial</span>
+          </div>
+          <a href="project-3.html" class="project-link">Read case study →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-groups">
+        <div>
+          <p class="skills-group-label">Languages &amp; Tools</p>
+          <div class="skills-badges">
+            <span class="badge">Python</span>
+            <span class="badge">R</span>
+            <span class="badge">SQL</span>
+            <span class="badge">Power BI</span>
+            <span class="badge">Excel</span>
+            <span class="badge">QGIS</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">HTML</span>
+          </div>
+        </div>
+        <div>
+          <p class="skills-group-label">Libraries</p>
+          <div class="skills-badges">
+            <span class="badge">Pandas</span>
+            <span class="badge">NumPy</span>
+            <span class="badge">Seaborn</span>
+            <span class="badge">Matplotlib</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Anna Kim</p>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/annakim" target="_blank">LinkedIn</a>
+        <a href="https://github.com/annakim" target="_blank">GitHub</a>
+        <a href="mailto:ak2825@cornell.edu">ak2825@cornell.edu</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
