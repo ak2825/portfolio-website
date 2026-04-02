@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beats and Beliefs — Anna Kim</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Anna Kim</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="Anna_Kim_Resume.pdf" target="_blank" class="nav-resume">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <a href="index.html#projects" class="case-back">← Back to projects</a>
+
+    <div class="case-header">
+      <h1 class="case-title">Beats and Beliefs</h1>
+      <p class="case-subtitle">
+        Does freedom of speech shape what music a country listens to?
+        An analysis of Spotify Top 50 chart data merged with country-level democracy indices.
+      </p>
+      <div class="case-tags">
+        <span class="tag">Python</span>
+        <span class="tag">R</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Data Cleaning</span>
+        <span class="tag">EDA</span>
+        <span class="tag">Regression Analysis</span>
+        <span class="tag">GitHub</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+
+      <div class="case-section">
+        <h2 class="case-section-title">Overview</h2>
+        <p>
+          This project explored whether a country's level of political freedom influences what kind of music
+          charts there. Specifically: do countries with lower freedom of speech indices tend to have fewer
+          explicit songs in their Spotify Top 50?
+        </p>
+        <p>
+          The project also examined the dominance of U.S. and English-language content in global music
+          consumption, investigating whether "globalization" in music is actually just Americanization.
+        </p>
+      </div>
+
+      <div class="case-section">
+        <h2 class="case-section-title">The Data</h2>
+        <p>
+          I worked with two datasets: Spotify's Top 50 charts for multiple countries (including track metadata
+          such as explicit flag, artist, and chart position) and country-level democracy/freedom indices from
+          a public political science dataset.
+        </p>
+        <p>
+          The main data challenges were:
+        </p>
+        <ul>
+          <li>Inconsistent country name formatting between the two datasets required careful string matching and manual mapping in SQL</li>
+          <li>The Spotify data had missing explicit flags for some tracks, which required imputation decisions</li>
+          <li>Some countries had very few charting tracks, creating small-sample issues for regression</li>
+        </ul>
+      </div>
+
+      <div class="case-section">
+        <h2 class="case-section-title">My Approach</h2>
+        <p>
+          I queried and cleaned the Spotify data using SQL to extract explicit content rates per country,
+          then merged it with the democracy index data in Python using Pandas. I filtered to countries with
+          at least 10 charting tracks to ensure statistical validity.
+        </p>
+        <p>
+          Exploratory analysis in R (ggplot2) revealed clear regional clustering — English-speaking countries
+          had significantly higher explicit rates regardless of their democracy scores, suggesting language
+          is a confounding variable.
+        </p>
+        <p>
+          I ran multivariate regression in Python/R controlling for English-language dominance, GDP per capita,
+          and internet penetration rate to isolate the freedom-of-speech effect.
+        </p>
+      </div>
+
+      <div class="case-section">
+        <h2 class="case-section-title">Results</h2>
+        <p>
+          After controlling for confounds, freedom of speech score had a statistically significant positive
+          relationship with explicit content rates (p &lt; 0.05). However, the effect size was modest — the
+          biggest predictor of a country's music content was whether English-language artists dominated its charts.
+        </p>
+        <p>
+          The analysis found that roughly 60% of all charting tracks across non-English-speaking countries
+          were by U.S. or UK artists, suggesting that what looks like "global music diversity" is largely
+          English-language cultural export.
+        </p>
+        <a href="#" class="case-github">↗ View on GitHub</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Anna Kim</p>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/annakim" target="_blank">LinkedIn</a>
+        <a href="https://github.com/annakim" target="_blank">GitHub</a>
+        <a href="mailto:ak2825@cornell.edu">ak2825@cornell.edu</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
