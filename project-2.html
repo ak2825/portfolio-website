@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBA Player Performance Analytics — Anna Kim</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Anna Kim</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="Anna_Kim_Resume.pdf" target="_blank" class="nav-resume">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <a href="index.html#projects" class="case-back">← Back to projects</a>
+
+    <div class="case-header">
+      <h1 class="case-title">NBA Player Performance Analytics</h1>
+      <p class="case-subtitle">
+        Using regression models and PCA to understand what actually drives NBA player performance —
+        and which statistics carry the most signal.
+      </p>
+      <div class="case-tags">
+        <span class="tag">Python</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">PCA</span>
+        <span class="tag">Regression Analysis</span>
+        <span class="tag">Data Visualization</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+
+      <div class="case-section">
+        <h2 class="case-section-title">Overview</h2>
+        <p>
+          NBA player statistics are notoriously multicollinear — points, assists, rebounds, and shooting
+          percentages all correlate with each other in complex ways. This project aimed to cut through
+          that noise using dimensionality reduction and regression to identify which underlying performance
+          factors are truly independent predictors of player value.
+        </p>
+      </div>
+
+      <div class="case-section">
+        <h2 class="case-section-title">The Data</h2>
+        <p>
+          I worked with a dataset of per-game player statistics across multiple NBA seasons, including
+          traditional box score stats (points, rebounds, assists, steals, blocks, turnovers) and
+          advanced metrics (PER, true shooting %, usage rate).
+        </p>
+        <p>
+          Key data challenges:
+        </p>
+        <ul>
+          <li>Players who were traded mid-season appeared multiple times with split stats — required aggregation logic</li>
+          <li>Rookie seasons and injury-shortened seasons created outliers with low sample sizes that needed filtering</li>
+          <li>Missing values in advanced metrics for older seasons required decisions about imputation vs. exclusion</li>
+        </ul>
+      </div>
+
+      <div class="case-section">
+        <h2 class="case-section-title">My Approach</h2>
+        <p>
+          I first built linear regression models to establish baselines for predicting player efficiency
+          rating (PER) from raw stats. Then I applied nonlinear regression (polynomial features) to
+          capture interaction effects between statistics.
+        </p>
+        <p>
+          The more interesting analysis was PCA via SVD using NumPy. By decomposing the player statistics
+          matrix, I identified the principal components — the underlying dimensions of variation that
+          explain most of the differences between players.
+        </p>
+        <p>
+          The first principal component separated high-usage scorers from low-usage role players.
+          The second separated perimeter players (high assists, steals) from frontcourt players
+          (high rebounds, blocks). Together, two components explained over 70% of variance.
+        </p>
+      </div>
+
+      <div class="case-section">
+        <h2 class="case-section-title">Results</h2>
+        <p>
+          Linear regression on raw stats achieved an R² of 0.74 for predicting PER. Adding polynomial
+          terms improved this to 0.81, with the biggest gains from interaction terms between usage rate
+          and shooting efficiency.
+        </p>
+        <p>
+          The PCA visualization revealed intuitive player clusters: traditional big men, point guards,
+          3-and-D wings, and high-usage scorers occupied distinct regions of the component space —
+          consistent with how basketball analysts categorize player archetypes.
+        </p>
+        <a href="#" class="case-github">↗ View on GitHub</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Anna Kim</p>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/annakim" target="_blank">LinkedIn</a>
+        <a href="https://github.com/annakim" target="_blank">GitHub</a>
+        <a href="mailto:ak2825@cornell.edu">ak2825@cornell.edu</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
