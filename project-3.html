@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allington Lab Research — Anna Kim</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Anna Kim</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="Anna_Kim_Resume.pdf" target="_blank" class="nav-resume">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <a href="index.html#projects" class="case-back">← Back to projects</a>
+
+    <div class="case-header">
+      <h1 class="case-title">Allington Lab Research</h1>
+      <p class="case-subtitle">
+        Generating high-quality labeled training data for a deep learning land-use classification model
+        using satellite imagery of agricultural land in Uttarakhand, India.
+      </p>
+      <div class="case-tags">
+        <span class="tag">QGIS</span>
+        <span class="tag">Python</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Geospatial</span>
+        <span class="tag">Data Labeling</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+
+      <div class="case-section">
+        <h2 class="case-section-title">Overview</h2>
+        <p>
+          As a Research Assistant at Cornell CALS's Allington Lab, I contribute to a project building an
+          automated land-use classification system for detecting active vs. abandoned agricultural land
+          in the Uttarakhand region of northern India. The model is designed to help researchers and
+          policymakers track agricultural abandonment patterns at scale — a problem that can't be solved
+          manually given the geographic scope.
+        </p>
+        <p>
+          My role focuses on the data labeling pipeline: producing the ground-truth training data that
+          the deep learning model learns from.
+        </p>
+      </div>
+
+      <div class="case-section">
+        <h2 class="case-section-title">The Data</h2>
+        <p>
+          The input data is multi-temporal satellite imagery — images of the same parcels taken at
+          different points in the growing season. The key insight is that active agricultural land
+          shows distinct phenological patterns (crop growth cycles) that can be distinguished from
+          fallow or abandoned land when you compare images across time.
+        </p>
+        <p>
+          Data challenges I navigated:
+        </p>
+        <ul>
+          <li>Cloud cover obscured many images, requiring careful selection of usable time windows</li>
+          <li>Field boundaries in hilly terrain are irregular and difficult to delineate precisely</li>
+          <li>Visual distinction between fallow (temporarily unplanted) and abandoned (permanently unused) land requires domain judgment about phenology and field morphology</li>
+        </ul>
+      </div>
+
+      <div class="case-section">
+        <h2 class="case-section-title">My Approach</h2>
+        <p>
+          I used QGIS to view and annotate satellite imagery, drawing polygon boundaries around
+          individual agricultural parcels and labeling each as active cultivation, fallow, or abandoned.
+          Each annotation required visual inference over crop phenology (green vegetation in growing
+          season), spatial texture (tilled vs. overgrown surfaces), and field morphology (maintained
+          vs. eroded boundaries).
+        </p>
+        <p>
+          To ensure temporal consistency — meaning the same parcel is labeled the same way across
+          different image dates — I developed a personal review workflow: annotating candidate parcels
+          in multiple time windows before finalizing a label, and flagging ambiguous cases for
+          supervisor review rather than guessing.
+        </p>
+      </div>
+
+      <div class="case-section">
+        <h2 class="case-section-title">Results</h2>
+        <p>
+          I have produced hundreds of quality-controlled polygon annotations that are feeding into the
+          model's training pipeline. The annotations enable downstream geospatial preprocessing in QGIS
+          and improve model generalization — the model's ability to correctly classify parcels it hasn't
+          seen before.
+        </p>
+        <p>
+          This is ongoing research. The broader goal is a deployable classification tool that can scan
+          entire districts for agricultural land-use change without requiring manual survey visits.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Anna Kim</p>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/annakim" target="_blank">LinkedIn</a>
+        <a href="https://github.com/annakim" target="_blank">GitHub</a>
+        <a href="mailto:ak2825@cornell.edu">ak2825@cornell.edu</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
