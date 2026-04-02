@@ -6,6 +6,7 @@
   --surface: #27272a;
   --border: #3f3f46;
   --accent: #a78bfa;
+  --accent-hover: #c4b5fd;
   --accent-dim: rgba(167, 139, 250, 0.15);
   --text: #fafafa;
   --text-secondary: #a1a1aa;
@@ -47,6 +48,11 @@ ul {
 img {
   max-width: 100%;
   display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* =====================
@@ -205,7 +211,7 @@ img {
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
   border: 1px solid transparent;
 }
 
@@ -216,8 +222,8 @@ img {
 }
 
 .btn-primary:hover {
-  background: #c4b5fd;
-  border-color: #c4b5fd;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 .btn-secondary {
@@ -381,6 +387,7 @@ img {
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 12px;
+  color: var(--text);
 }
 
 .about-hero-sub {
@@ -544,6 +551,7 @@ img {
   margin-bottom: 12px;
 }
 
+/* restore bullets for prose content (overrides global ul reset) */
 .case-section ul {
   list-style: disc;
   padding-left: 20px;
@@ -602,6 +610,7 @@ img {
 
   .nav-links.open {
     display: flex;
+    z-index: 10;
   }
 
   .nav-toggle {
@@ -609,7 +618,7 @@ img {
   }
 
   .nav {
-    position: relative;
+    position: sticky;
   }
 
   .projects-grid {
